@@ -85,16 +85,13 @@ public class Mithai implements Observer {
 //        // Stop all tasks and wait 60 seconds to finish them
 //        TaskManager.getInstance().stopAll();
 
-
-
-
     }
 
     private synchronized void loadDevices() {
         sensorStore.getDevices().clear();
 
         for (int i = 1; i<= Integer.parseInt(configuration.getProperty(NUMBER_OF_SENSORS)); i++) {
-            sensorStore.addDevice(new TemperatureSensor("spot" + i));
+            sensorStore.addDevice(new TemperatureSensor("sensor" + i));
         }
     }
 
