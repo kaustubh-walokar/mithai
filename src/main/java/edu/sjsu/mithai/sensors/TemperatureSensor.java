@@ -8,6 +8,7 @@ public class TemperatureSensor extends AbstractDevice {
     private double min;
     private Random random;
 
+
     public TemperatureSensor(String id) {
         super(id);
         random = new Random();
