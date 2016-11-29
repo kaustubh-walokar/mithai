@@ -30,7 +30,7 @@ public class RealTemperatureSensor implements IDevice {
                 String value = readSensorValue();
 
                 if (!value.equals("FAIL")) {
-		   return Double.parseDouble(value);
+                    return Double.parseDouble(value);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -48,7 +48,7 @@ public class RealTemperatureSensor implements IDevice {
         ProcessBuilder ps = new ProcessBuilder(COMMAND, ARGS);
         ps.redirectErrorStream(true);
         double val;
-	Process pr = ps.start();
+        Process pr = ps.start();
 
         assert pr != null;
         try (BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()))) {
@@ -59,12 +59,12 @@ public class RealTemperatureSensor implements IDevice {
         return line;
     }
 
-        @Override
-        public String getId () {
-            String ID;
-            ID = "Sensor 1";
-            return ID;
-        }
-
+    @Override
+    public String getId() {
+        String ID;
+        ID = "Sensor 1";
+        return ID;
     }
+
+}
 
